@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="fullpage.css"/>
+    <script src="fullpage.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src="jquery.novacancy.min.js"></script>
+    <title>RD</title>
+</head>
+<body id="move" >
+    <header id="header" >
+        <a href="#" class="logo">Red Team</a>
+        <div class="toggle"></div>
+        <ul class="navigation">
+            <li><a href="#" class="active">Главная</a></li>
+            <li><a href="#">О нас</a></li>
+            <li><a href="#">Контакты</a></li>
+        </ul>
+    </header>
+    <section>
+        <div id="fullpage">    
+            <div class="section slide1 ">
+                 <img src="assets/cloud2.png" id="cloud22">
+                  <img src="assets/cloud1.png" id="cloud11">
+                   <img src="assets/cloud1.png" id="cloud1">
+                    <img src="assets/cloud2.png" id="cloud2">
+                     <img src="assets/sun.png" id="sun">
+                      <img src="assets/back.png" id="back">
+                        <img src="assets/mount.png" id="mount">
+                         <img src="assets/front.png" id="front">
+            </div>
+
+            <div class="section slide2 " > 
+                <img src="assets/lightOff.png" class="light">
+                <img src="assets/under1.png" class="underground1">
+                        <div class="text box">
+                            
+                            <h2 id="neonthis"><br>red team <br>design</h2>
+                                <p>Повседневная практика показывает, <br>что реализация намеченных плановых заданий в<br> значительной степени обуславливает создание модели развития. 
+                            </p> 
+                        </div>
+            </div> 
+            <div class="section slide3 " >
+                <img src="assets/lightOff.png" class="light">
+                <img src="assets/secondunder1.png" class="underground2">
+                        <div class="text box">
+                            <h2 id="neo">technology</h2>
+                                <p>Повседневная практика показывает, что реализация намеченных плановых заданий 
+                            </p> 
+                        </div>
+            </div> 
+            <div class="section slide4" >
+                <img src="assets/lightOff.png" class="light">
+                <img src="assets/deepunderoff.png" class="underground2 ">
+                        <div class="text box">
+                            <h2 id="neo">innovation</h2>
+                                <p>Повседневная практика показывает, что реализация намеченных плановых заданий 
+                            </p>  
+                        </div>
+            </div> 
+        </div>
+    </section>
+
+    
+
+    <script>
+        //обработчик события 
+        const Boxess = document.querySelectorAll('.light');
+        
+        
+        window.addEventListener('scroll', checkBoxess);
+        
+        checkBoxess(); // 
+        
+        function checkBoxess() {
+          const triggerBottom = (window.innerHeight / 5 * 4);
+          
+          Boxess.forEach(light => {
+            const lightTop = light.getBoundingClientRect().top;
+            
+            if(lightTop < triggerBottom) {
+                light.classList.add('shows','bgs');
+    
+            } else {
+                light.classList.remove('shows','bgs');
+            }
+          })
+        }
+        
+                
+            </script>
+
+    
+
+    <script>
+//обработчик события 
+const boxes = document.querySelectorAll('.box');
+
+window.addEventListener('scroll', checkBoxes);
+
+checkBoxes();  
+
+function checkBoxes() {
+  const triggerBottom = (window.innerHeight / 5 * 4);
+  
+  boxes.forEach(box => {
+    const boxTop = box.getBoundingClientRect().top;
+    
+    if(boxTop < triggerBottom) {
+      box.classList.add('show','bgoff');
+    } else {
+      box.classList.remove('show','bgoff');
+    }
+  })
+}
+
+        
+    </script>
+       
+
+    <script>    
+            //parallax двигает объекты 
+            
+            let cloud1 = document.getElementById('cloud1');
+            let cloud2 = document.getElementById('cloud2');
+            let sun = document.getElementById('sun');
+            let back = document.getElementById('back');
+            let mount = document.getElementById('mount');
+            let front = document.getElementById('front');
+
+                    window.addEventListener('scroll', function(){
+                        let value = window.scrollY;
+
+            cloud1.style.paddingLeft = value * 0.1 + '%';
+             cloud2.style.paddingRight = value * 0.1 + '%';
+            sun.style.bottom = value * -0.1 + '%';
+             back.style.bottom = value * -0.03 + '%';
+            mount.style.bottom = value * -0.06 + '%'; 
+             front.style.bottom = value * 0 + '%';
+            })
+
+         
+    </script>
+    
+        <script>
+            //кнопка меню для телефона
+            const toggleMenu = document.querySelector('.toggle');
+            const navigation = document.querySelector('.navigation');
+            toggleMenu.onclick = function(){
+                toggleMenu.classList.toggle('active');
+                navigation.classList.toggle('active');
+            }
+        </script>
+<script>
+    //scroll докрутка до секции 
+    var myFullpage = new fullpage('#fullpage', {
+	//Navigation
+	menu: '#menu',
+	lockAnchors: false,
+	anchors:['.slide1', 'slide2','slide3','slide4'],
+	//Scrolling
+	css3: true,
+	scrollingSpeed: 1500,
+	autoScrolling: false,
+	fitToSection: true,
+	fitToSectionDelay: 1000,
+	scrollBar: false,
+	easing: 'easeInOutCubic',
+	easingcss3: 'ease',
+	loopBottom: false,
+	loopTop: false,
+	loopHorizontal: true,
+	continuousVertical: false,
+	continuousHorizontal: false,
+	scrollHorizontally: false,
+	interlockedSlides: false,
+	dragAndMove: false,
+	offsetSections: false,
+	resetSliders: false,
+	fadingEffect: false,
+	scrollOverflow: false,
+	scrollOverflowReset: false,
+	scrollOverflowOptions: null,
+	touchSensitivity: 15,
+	bigSectionsDestination: null,
+
+	//Accessibility
+	keyboardScrolling: true,
+	animateAnchor: true,
+	recordHistory: true,
+
+	//Design
+	/*controlArrows: true,
+	verticalCentered: true,
+	sectionsColor : ['#ccc', '#fff'],
+	paddingTop: '3em',
+	paddingBottom: '10px',
+	fixedElements: '#header, .footer',
+	responsiveWidth: 0,
+	responsiveHeight: 0,
+	responsiveSlides: false,
+	parallax: false,
+	parallaxOptions: {type: 'reveal', percentage: 62, property: 'translate'},
+	dropEffect: false,
+	dropEffectOptions: { speed: 2300, color: '#F82F4D', zIndex: 9999},
+	waterEffect: false,
+	waterEffectOptions: { animateContent: true, animateOnMouseMove: true},
+	cards: false,
+	cardsOptions: {perspective: 100, fadeContent: true, fadeBackground: true},*/
+
+	//Custom selectors
+	sectionSelector: '.section',
+	slideSelector: '.slide',
+
+	lazyLoading: true,
+
+	//events
+	onLeave: function(origin, destination, direction){},
+	afterLoad: function(origin, destination, direction){},
+	afterRender: function(){},
+	afterResize: function(width, height){},
+	afterReBuild: function(){},
+	afterResponsive: function(isResponsive){},
+	afterSlideLoad: function(section, origin, destination, direction){},
+	onSlideLeave: function(section, origin, destination, direction){}
+});
+</script>
+
+<script>
+    //неоновые буквы 
+function neos() {$(document).ready(function () {
+      $('#neonthis, #neo').novacancy({
+          'reblinkProbability': 0.4,
+'blinkMin': 0.1,
+'blinkMax': 0.4,
+'loopMin': 1,
+'loopMax': 2,
+'color': '#5ED0BD',
+'glow': ['0 0 80px #50C878', '0 0 30px #50C878', '0 0 6px #50C878'],
+'off': 0,
+'blink': 2,
+'autoOn': true
+      });
+  });}
+
+  neos ()
+</script>
+
+<script>
+    /*var y = document.body.className;
+    function upsd (){
+        var s = document.body.className;
+        if (s == y ){
+            Move()
+        }
+    }
+    setInterval(upsd,1000);*/
+</script>
+<script>
+    
+</script>
+</body>
+</html>
