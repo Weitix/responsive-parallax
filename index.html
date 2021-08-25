@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="style.css">
-    <link rel="stylesheet" href="fullpage.css"/>
-    <script src="fullpage.js"></script>
+    <link rel="stylesheet" type="text/css" href="fullpage.css"/>
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+    integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
-    <script src="jquery.novacancy.min.js"></script>
+    <script src="/Script/jquery.novacancy.min.js"></script>
     <title>RD</title>
 </head>
 <body id="move" >
@@ -61,204 +62,56 @@
                             </p>  
                         </div>
             </div> 
+            <div class="section slide5" >
+                <img src="assets/lightOff.png" class="light">
+                <img src="assets/deepunderoff2.png" class="underground2 ">
+                <div class="wrapper box">
+                    <div class="contact">
+                        <ul>
+                            <li><a href="#">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span class="fa fa-google"></span>
+                                </a></li>
+                            <li><a href="#">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span class="fa fa-github"></span>
+                                </a></li>
+                            <li><a href="#">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span class="fa fa-telegram"></span>
+                                </a></li>
+                            <li><a href="#">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span class="fa fa-linkedin"></span>
+                                </a></li>
+                            <li><a href="#">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span class="fa fa-instagram"></span>
+                                </a></li>
+                        </ul>
+                    </div>
+            </div>
+            </div>
         </div>
     </section>
 
-    
+<script   src="/Script/fullpage.js"></script>
+<script   src="/Script/Script.js"></script>
 
-    <script>
-        //обработчик события 
-        const Boxess = document.querySelectorAll('.light');
-        
-        
-        window.addEventListener('scroll', checkBoxess);
-        
-        checkBoxess(); // 
-        
-        function checkBoxess() {
-          const triggerBottom = (window.innerHeight / 5 * 4);
-          
-          Boxess.forEach(light => {
-            const lightTop = light.getBoundingClientRect().top;
-            
-            if(lightTop < triggerBottom) {
-                light.classList.add('shows','bgs');
-    
-            } else {
-                light.classList.remove('shows','bgs');
-            }
-          })
-        }
-        
-                
-            </script>
-
-    
-
-    <script>
-//обработчик события 
-const boxes = document.querySelectorAll('.box');
-
-window.addEventListener('scroll', checkBoxes);
-
-checkBoxes();  
-
-function checkBoxes() {
-  const triggerBottom = (window.innerHeight / 5 * 4);
-  
-  boxes.forEach(box => {
-    const boxTop = box.getBoundingClientRect().top;
-    
-    if(boxTop < triggerBottom) {
-      box.classList.add('show','bgoff');
-    } else {
-      box.classList.remove('show','bgoff');
-    }
-  })
-}
-
-        
-    </script>
-       
-
-    <script>    
-            //parallax двигает объекты 
-            
-            let cloud1 = document.getElementById('cloud1');
-            let cloud2 = document.getElementById('cloud2');
-            let sun = document.getElementById('sun');
-            let back = document.getElementById('back');
-            let mount = document.getElementById('mount');
-            let front = document.getElementById('front');
-
-                    window.addEventListener('scroll', function(){
-                        let value = window.scrollY;
-
-            cloud1.style.paddingLeft = value * 0.1 + '%';
-             cloud2.style.paddingRight = value * 0.1 + '%';
-            sun.style.bottom = value * -0.1 + '%';
-             back.style.bottom = value * -0.03 + '%';
-            mount.style.bottom = value * -0.06 + '%'; 
-             front.style.bottom = value * 0 + '%';
-            })
-
-         
-    </script>
-    
-        <script>
-            //кнопка меню для телефона
-            const toggleMenu = document.querySelector('.toggle');
-            const navigation = document.querySelector('.navigation');
-            toggleMenu.onclick = function(){
-                toggleMenu.classList.toggle('active');
-                navigation.classList.toggle('active');
-            }
-        </script>
-<script>
-    //scroll докрутка до секции 
-    var myFullpage = new fullpage('#fullpage', {
-	//Navigation
-	menu: '#menu',
-	lockAnchors: false,
-	anchors:['.slide1', 'slide2','slide3','slide4'],
-	//Scrolling
-	css3: true,
-	scrollingSpeed: 1500,
-	autoScrolling: false,
-	fitToSection: true,
-	fitToSectionDelay: 1000,
-	scrollBar: false,
-	easing: 'easeInOutCubic',
-	easingcss3: 'ease',
-	loopBottom: false,
-	loopTop: false,
-	loopHorizontal: true,
-	continuousVertical: false,
-	continuousHorizontal: false,
-	scrollHorizontally: false,
-	interlockedSlides: false,
-	dragAndMove: false,
-	offsetSections: false,
-	resetSliders: false,
-	fadingEffect: false,
-	scrollOverflow: false,
-	scrollOverflowReset: false,
-	scrollOverflowOptions: null,
-	touchSensitivity: 15,
-	bigSectionsDestination: null,
-
-	//Accessibility
-	
-
-	//Design
-	/*controlArrows: true,
-	verticalCentered: true,
-	sectionsColor : ['#ccc', '#fff'],
-	paddingTop: '3em',
-	paddingBottom: '10px',
-	fixedElements: '#header, .footer',
-	responsiveWidth: 0,
-	responsiveHeight: 0,
-	responsiveSlides: false,
-	parallax: false,
-	parallaxOptions: {type: 'reveal', percentage: 62, property: 'translate'},
-	dropEffect: false,
-	dropEffectOptions: { speed: 2300, color: '#F82F4D', zIndex: 9999},
-	waterEffect: false,
-	waterEffectOptions: { animateContent: true, animateOnMouseMove: true},
-	cards: false,
-	cardsOptions: {perspective: 100, fadeContent: true, fadeBackground: true},*/
-
-	//Custom selectors
-	sectionSelector: '.section',
-	slideSelector: '.slide',
-
-	lazyLoading: true,
-
-	//events
-	onLeave: function(origin, destination, direction){},
-	afterLoad: function(origin, destination, direction){},
-	afterRender: function(){},
-	afterResize: function(width, height){},
-	afterReBuild: function(){},
-	afterResponsive: function(isResponsive){},
-	afterSlideLoad: function(section, origin, destination, direction){},
-	onSlideLeave: function(section, origin, destination, direction){}
-});
-</script>
-
-<script>
-    //неоновые буквы 
-function neos() {$(document).ready(function () {
-      $('#neonthis, #neo').novacancy({
-          'reblinkProbability': 0.4,
-'blinkMin': 0.1,
-'blinkMax': 0.4,
-'loopMin': 1,
-'loopMax': 2,
-'color': '#5ED0BD',
-'glow': ['0 0 80px #50C878', '0 0 30px #50C878', '0 0 6px #50C878'],
-'off': 0,
-'blink': 2,
-'autoOn': true
-      });
-  });}
-
-  neos ()
-</script>
-
-<script>
-    /*var y = document.body.className;
-    function upsd (){
-        var s = document.body.className;
-        if (s == y ){
-            Move()
-        }
-    }
-    setInterval(upsd,1000);*/
-</script>
-<script>
-    
-</script>
 </body>
 </html>
