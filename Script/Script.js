@@ -158,7 +158,22 @@ onSlideLeave: function(section, origin, destination, direction){}
 });
 
 //неоновые буквы 
+function neos() {$(document).ready(function () {
+$('#neonthis, #neo').novacancy({
+  'reblinkProbability': 0.4,
+'blinkMin': 0.1,
+'blinkMax': 0.4,
+'loopMin': 1,
+'loopMax': 2,
+'color': '#5ED0BD',
+'glow': ['0 0 80px #50C878', '0 0 30px #50C878', '0 0 6px #50C878'],
+'off': 0,
+'blink': 2,
+'autoOn': true
+});
+});}
 
+neos ()
 
 /*var y = document.body.className;
 function upsd (){
